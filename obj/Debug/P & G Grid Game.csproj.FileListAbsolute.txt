@@ -1,0 +1,13 @@
+C:\Users\ibrah\source\repos\P & G Grid Game\bin\Debug\P & G Grid Game.exe.config
+C:\Users\ibrah\source\repos\P & G Grid Game\bin\Debug\P & G Grid Game.exe
+C:\Users\ibrah\source\repos\P & G Grid Game\bin\Debug\P & G Grid Game.pdb
+C:\Users\ibrah\source\repos\P & G Grid Game\bin\Debug\Guna.UI2.dll
+C:\Users\ibrah\source\repos\P & G Grid Game\obj\Debug\P & G Grid Game.csproj.AssemblyReference.cache
+C:\Users\ibrah\source\repos\P & G Grid Game\obj\Debug\P___G_Grid_Game.Form1.resources
+C:\Users\ibrah\source\repos\P & G Grid Game\obj\Debug\P___G_Grid_Game.Properties.Resources.resources
+C:\Users\ibrah\source\repos\P & G Grid Game\obj\Debug\P & G Grid Game.csproj.GenerateResource.cache
+C:\Users\ibrah\source\repos\P & G Grid Game\obj\Debug\P & G Grid Game.csproj.CoreCompileInputs.cache
+C:\Users\ibrah\source\repos\P & G Grid Game\obj\Debug\P & G Gr.F9BCDD81.Up2Date
+C:\Users\ibrah\source\repos\P & G Grid Game\obj\Debug\P & G Grid Game.exe
+C:\Users\ibrah\source\repos\P & G Grid Game\obj\Debug\P & G Grid Game.pdb
+C:\Users\ibrah\source\repos\P & G Grid Game\obj\Debug\P & G Grid Game.exe.config
