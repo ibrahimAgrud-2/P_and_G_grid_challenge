@@ -1,7 +1,7 @@
 ﻿using Guna.UI2.WinForms;
 using System;
 using System.Drawing;
-using System.Linq;
+using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Windows.Forms;
 
@@ -61,23 +61,46 @@ namespace P___G_Grid_Game
         }
         //______________________________
 
-        int[] Xs = new int[50];
-        int[] Ys = new int[50];
+   
 
- 
-        Guna2CustomRadioButton createRadioButton()
+
+
+        List<int> Xs = new List<int> { 1, 29, 57, 85, 113, 141, 169, 197, 225, 253, 281, 309, 337, 365, 393, 421, 449, 477, 505, 533, 561, 589, 617, 645, 673, 701, 729, 757, 785, 813, 841, 869, 897, 925, 953, 981, 1009, 1037, 1065, 1093, 1110 };
+
+        int getXPoint()
         {
-            Guna2CustomRadioButton rb = new Guna2CustomRadioButton();
+            int var = Xs[Random(0, Xs.Count)];
+            Xs.Remove(var);
 
+            return var;
+        }
 
+        int getYPoint()
+        {
+            int var = Random(9, 420);
+            return var;
+        }
+
+        int counter = 0;
+        Guna2CustomCheckBox createRadioButton()
+        {
+            Guna2CustomCheckBox rb = new Guna2CustomCheckBox();
+
+            //----Create checkboxes------
             rb.CheckedState.FillColor = System.Drawing.Color.White;
             rb.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(64, 0, 0);
             rb.AutoSize = false;
-            rb.Size = new System.Drawing.Size(27, 27);
-
-            //_____________________________
-
-        //    rb.Location = new Point(11, 111);
+            counter++;
+            if (counter<4)
+            {
+                rb.Checked = true;
+                rb.Tag = counter;
+            }
+            rb.Size = new System.Drawing.Size(22, 22);
+           //---------------------------------
+          
+            
+            rb.Location = new Point(getXPoint(), getYPoint());
    
             return rb;
         }
@@ -85,17 +108,21 @@ namespace P___G_Grid_Game
 
         void testForAddRadioButtonsInLoop()
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 30; i++)
             {
                 panel1.Controls.Add(createRadioButton());
 
             }
+       
         }
         private void btnTest_Click(object sender, EventArgs e)
         {
             testForAddRadioButtonsInLoop();
         }
 
-    
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            panel1.Enabled = false;
+        }
     }
 }
