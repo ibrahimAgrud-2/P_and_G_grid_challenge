@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnHelp = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -35,11 +36,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblTimer = new System.Windows.Forms.Label();
             this.btnTest = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.txtX = new System.Windows.Forms.TextBox();
-            this.txtY = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,7 +113,7 @@
             this.lblTimer.Name = "lblTimer";
             this.lblTimer.Size = new System.Drawing.Size(54, 26);
             this.lblTimer.TabIndex = 11;
-            this.lblTimer.Text = "0:40";
+            this.lblTimer.Text = "0:10";
             // 
             // btnTest
             // 
@@ -125,41 +125,13 @@
             this.btnTest.FillColor = System.Drawing.SystemColors.WindowText;
             this.btnTest.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnTest.ForeColor = System.Drawing.Color.MediumVioletRed;
-            this.btnTest.Location = new System.Drawing.Point(539, 636);
+            this.btnTest.Location = new System.Drawing.Point(57, 609);
             this.btnTest.Name = "btnTest";
             this.btnTest.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnTest.Size = new System.Drawing.Size(203, 32);
             this.btnTest.TabIndex = 14;
-            this.btnTest.Text = "test button";
+            this.btnTest.Text = "Select ";
             this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
-            // 
-            // txtX
-            // 
-            this.txtX.BackColor = System.Drawing.Color.Wheat;
-            this.txtX.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtX.Location = new System.Drawing.Point(182, 582);
-            this.txtX.Name = "txtX";
-            this.txtX.Size = new System.Drawing.Size(147, 32);
-            this.txtX.TabIndex = 15;
-            this.txtX.Text = "10";
-            // 
-            // txtY
-            // 
-            this.txtY.BackColor = System.Drawing.Color.Wheat;
-            this.txtY.Location = new System.Drawing.Point(182, 630);
-            this.txtY.Name = "txtY";
-            this.txtY.Size = new System.Drawing.Size(147, 32);
-            this.txtY.TabIndex = 16;
-            this.txtY.Text = "10";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(55, 636);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 26);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "test Y";
             // 
             // panel1
             // 
@@ -174,16 +146,41 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 26;
             this.listBox1.Items.AddRange(new object[] {
-            "Gelinen son durumda, sadece X koordinatları bizim belirlediğimiz yerden seçilecek" +
-                ". ",
-            "Y koordinatları rastgele seçilecek.",
+            "Artık yerleştirme bitti.",
+            "Oyun bu seviyede devam etmeli. İlk olarak ekrana dolu bir checkbox gelmeli ve",
+            "sonra sırayla değer 2 checkbox sırayla gelmeli en sonrda ",
+            "hepsini işaretlenmeli",
             "",
-            "Şimdi seçilecek 3 chechboxı seçmek ve onları sırayla ekranda gösermek lazım. ",
-            "Daha sonra oyuna devam edelim"});
-            this.listBox1.Location = new System.Drawing.Point(819, 582);
+            "*SOrun, her defasnda rasgele select olmalı ve o select edilen unselect yapılmalı " +
+                "timer ",
+            "bitince",
+            "- Boş değer dönderme, out of range ihtimallerne karşı her türlü önemleri alalım"});
+            this.listBox1.Location = new System.Drawing.Point(545, 582);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(309, 134);
+            this.listBox1.Size = new System.Drawing.Size(583, 134);
             this.listBox1.TabIndex = 0;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            // 
+            // guna2CircleButton1
+            // 
+            this.guna2CircleButton1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.guna2CircleButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2CircleButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2CircleButton1.FillColor = System.Drawing.SystemColors.WindowText;
+            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.guna2CircleButton1.ForeColor = System.Drawing.Color.MediumVioletRed;
+            this.guna2CircleButton1.Location = new System.Drawing.Point(297, 609);
+            this.guna2CircleButton1.Name = "guna2CircleButton1";
+            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton1.Size = new System.Drawing.Size(203, 32);
+            this.guna2CircleButton1.TabIndex = 14;
+            this.guna2CircleButton1.Text = "deselect";
+            this.guna2CircleButton1.Click += new System.EventHandler(this.btnTest_Click);
             // 
             // Form1
             // 
@@ -191,10 +188,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1162, 721);
             this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.guna2CircleButton1);
             this.Controls.Add(this.btnTest);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtY);
-            this.Controls.Add(this.txtX);
             this.Controls.Add(this.lblTimer);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.progressBar1);
@@ -219,11 +214,10 @@
         private Guna.UI2.WinForms.Guna2CircleButton btnHelp;
         private Guna.UI2.WinForms.Guna2CircleButton btnClose;
         private Guna.UI2.WinForms.Guna2CircleButton btnTest;
-        private System.Windows.Forms.TextBox txtX;
-        private System.Windows.Forms.TextBox txtY;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Timer timer1;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
     }
 }
 

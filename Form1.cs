@@ -37,35 +37,13 @@ namespace P___G_Grid_Game
             Init();
             return random.Next(min, max);
         }
-        public static int GetInt32(int minValue, int maxValue)
-        {
-            if (minValue >= maxValue)
-                throw new ArgumentOutOfRangeException();
-
-            int diff = maxValue - minValue;
-            byte[] uint32Buffer = new byte[4];
-
-            using (var rng = RandomNumberGenerator.Create())
-            {
-                while (true)
-                {
-                    rng.GetBytes(uint32Buffer);
-                    uint rand = BitConverter.ToUInt32(uint32Buffer, 0);
-
-                    long max = (1L + uint.MaxValue) / diff * diff;
-
-                    if (rand < max)
-                        return (int)(minValue + (rand % diff));
-                }
-            }
-        }
         //______________________________
 
-   
 
-
-
+  
+        //To get a better dispersal, just a certain number of X points is  allowed  
         List<int> Xs = new List<int> { 1, 29, 57, 85, 113, 141, 169, 197, 225, 253, 281, 309, 337, 365, 393, 421, 449, 477, 505, 533, 561, 589, 617, 645, 673, 701, 729, 757, 785, 813, 841, 869, 897, 925, 953, 981, 1009, 1037, 1065, 1093, 1110 };
+
 
         int getXPoint()
         {
@@ -75,13 +53,15 @@ namespace P___G_Grid_Game
             return var;
         }
 
+
         int getYPoint()
         {
             int var = Random(9, 420);
             return var;
         }
 
-        int counter = 0;
+       
+        //Create a single checkbox
         Guna2CustomCheckBox createRadioButton()
         {
             Guna2CustomCheckBox rb = new Guna2CustomCheckBox();
@@ -90,12 +70,6 @@ namespace P___G_Grid_Game
             rb.CheckedState.FillColor = System.Drawing.Color.White;
             rb.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(64, 0, 0);
             rb.AutoSize = false;
-            counter++;
-            if (counter<4)
-            {
-                rb.Checked = true;
-                rb.Tag = counter;
-            }
             rb.Size = new System.Drawing.Size(22, 22);
            //---------------------------------
           
@@ -106,7 +80,9 @@ namespace P___G_Grid_Game
         }
 
 
-        void testForAddRadioButtonsInLoop()
+
+        //Place created the checkbox in the panel
+        void placeCreatedCheckbox()
         {
             for (int i = 0; i < 30; i++)
             {
@@ -115,14 +91,41 @@ namespace P___G_Grid_Game
             }
        
         }
+
+        struct stRoundInfo
+        {
+           public Guna2CustomCheckBox cb;
+
+        }
+
+        private Guna2CustomCheckBox selectRandomCheckbox()
+        {
+            if (panel1.Controls.Count>0)
+            {
+                Guna2CustomCheckBox cb = (Guna2CustomCheckBox)panel1.Controls[Random(0, panel1.Controls.Count)];
+
+                if (cb != null)
+                {
+                    cb.Checked = true;
+                    return cb; ;
+                }
+            }
+            return null;
+           
+        }
+
         private void btnTest_Click(object sender, EventArgs e)
         {
-            testForAddRadioButtonsInLoop();
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             panel1.Enabled = false;
+            
+           placeCreatedCheckbox();
+           
         }
+
     }
 }
