@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace P___G_Grid_Game
 {
@@ -62,7 +63,7 @@ namespace P___G_Grid_Game
 
        
         //Create a single checkbox
-        Guna2CustomCheckBox createRadioButton()
+        Guna2CustomCheckBox createcheckbox()
         {
             Guna2CustomCheckBox rb = new Guna2CustomCheckBox();
 
@@ -79,53 +80,87 @@ namespace P___G_Grid_Game
             return rb;
         }
 
-
-
         //Place created the checkbox in the panel
         void placeCreatedCheckbox()
         {
             for (int i = 0; i < 30; i++)
             {
-                panel1.Controls.Add(createRadioButton());
+                panel1.Controls.Add(createcheckbox());
 
             }
        
         }
 
-        struct stRoundInfo
-        {
-           public Guna2CustomCheckBox cb;
+        //________________________________________________________________
 
-        }
 
+
+    
+       private List<Guna2CustomCheckBox> SelectedCheckboxes=new List<Guna2CustomCheckBox>();
+        Guna2CustomCheckBox currentBox = new Guna2CustomCheckBox();
         private Guna2CustomCheckBox selectRandomCheckbox()
         {
             if (panel1.Controls.Count>0)
             {
                 Guna2CustomCheckBox cb = (Guna2CustomCheckBox)panel1.Controls[Random(0, panel1.Controls.Count)];
 
-                if (cb != null)
+                if (!SelectedCheckboxes.Contains(cb))
                 {
+
                     cb.Checked = true;
-                    return cb; ;
+                    SelectedCheckboxes.Add(cb);
+                    return cb;
                 }
             }
             return null;
            
         }
 
-        private void btnTest_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             panel1.Enabled = false;
-            
-           placeCreatedCheckbox();
-           
+
+            placeCreatedCheckbox();
+       
+
         }
 
+
+        void unselect()
+        {
+          
+
+            for (int i = 0; i < SelectedCheckboxes.Count-1; i++)
+            {
+                SelectedCheckboxes[i].Checked = false   ;
+            }
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        byte counter = 0;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            counter++;
+            if (counter>1)
+            {
+                //Currenct kullanmama lazım
+                SelectedCheckboxes[counter-1].Checked = false;
+                if (counter==4)
+                {
+                    timer1.Stop();
+                    return;
+                }
+            }
+            
+
+                selectRandomCheckbox();
+       
+               
+                
+
+        }
     }
 }
