@@ -37,17 +37,16 @@
             this.lblTimer = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // progressBar1
             // 
             this.progressBar1.Location = new System.Drawing.Point(2, 75);
-            this.progressBar1.Maximum = 10;
+            this.progressBar1.Maximum = 3;
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(1041, 26);
+            this.progressBar1.Step = 1;
             this.progressBar1.TabIndex = 9;
             // 
             // panel2
@@ -120,44 +119,18 @@
             this.panel1.Location = new System.Drawing.Point(13, 120);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1148, 446);
-            this.panel1.TabIndex = 10;
+            this.panel1.TabIndex = 3;
             // 
             // timer1
             // 
             this.timer1.Interval = 1500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(137, 613);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 84);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 26;
-            this.listBox1.Items.AddRange(new object[] {
-            "iki temel sorun var şuan ",
-            "1) Son box\'da unselect yapılmalı belli bir süre sonra",
-            "",
-            "2) Box\'ın gözükme süresi istediğimiz gibi ayarlanabilmeli"});
-            this.listBox1.Location = new System.Drawing.Point(509, 563);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(652, 134);
-            this.listBox1.TabIndex = 12;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1162, 721);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblTimer);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.progressBar1);
@@ -183,8 +156,6 @@
         private Guna.UI2.WinForms.Guna2CircleButton btnClose;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
