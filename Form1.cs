@@ -50,7 +50,6 @@ namespace P___G_Grid_Game
         //To prevent overlapping and clustering, only predefined X points are allowed and selected randomly
         //------------------------------
         //[TR]
-        //To get a better dispersal, just a certain number of X points is allowed  
         //Normalde her box için konumu panel1'de rastgele seçtirecektim ancak rastgele seçmede çok fazla üst üste veya kümelenme oluyor. Bu
         //yüzden rastgele seçmek yerine, ben bazı çakışmayacak X-Y noktaları belirledim, program oradan rastgele seçsin. Önce hem X hem de Y
         //koordinatlarını ayrı ayrı listeye ekledim. Listeye koordinatları hiçbir şekilde çakışmayacak formatta hesaplayarak ekledim. Sonra
@@ -186,7 +185,7 @@ namespace P___G_Grid_Game
         {
             
             /*[EN]
-            //First unselect the previously selected boxes, then select a new one
+            //First, unselect the previously selected boxes, then select a new one
             //Selection logic: [Select → wait → unselect]
             //Waiting time is determined by the timer tick interval
             //------------------------------
