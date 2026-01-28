@@ -204,16 +204,31 @@ namespace P___G_Grid_Game
           
             if (SelectedCheckboxes.Count == 3)
             {
+                timer2.Stop();
+                guna2ProgressBar1.Value = 0;
                 timer1.Stop();
                 return;
             }
             selectRandomCheckbox();
+            timer2.Start();
 
 
         }
 
 
 
+        byte counter = 0;
 
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            counter++;
+            guna2ProgressBar1.Value = counter;
+
+            if (counter==guna2ProgressBar1.Maximum)
+            {
+                counter = 0;
+                guna2ProgressBar1.Value = 0;
+            }
+        }
     }
 }
