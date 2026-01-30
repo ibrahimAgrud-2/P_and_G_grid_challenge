@@ -122,36 +122,47 @@ namespace P___G_Grid_Game
 
             }
 
+
         }
 
-       
 
-
-        //[EN]
-        //Stores selected boxes in a list for later use
-        //------------------------------
         //[TR]
-        //Seçilen box'lar daha sonra kullanacağımız için onları listeye ekledim.
-        private List<Guna2CustomCheckBox> SelectedCheckboxes = new List<Guna2CustomCheckBox>();
+        //Programda kullandığımız değişkenleri bu struct'a toplayalım
+        private struct stGameInfo
+        {
+            //[EN]
+            //Stores selected boxes in a list for later use
+            //------------------------------
+            //[TR]
+            //Seçilen box'lar daha sonra kullanacağımız için onları listeye ekledim.
 
-        //[EN]
+            public List<Guna2CustomCheckBox> SelectedCheckboxes;
+            public byte counter;
+
+        }
+
+        stGameInfo gameInfo = new stGameInfo();
+      
+
+
+        /*[EN]
         //Selects a random checkbox from the placed boxes and marks it as selected
         //------------------------------
         //[TR]
-        //placeCreatedCheckbox fonksiyonu ile yerleştirilen box'lardan rastgele birini seçme fonksiyonu
+        //placeCreatedCheckbox fonksiyonu ile yerleştirilen box'lardan rastgele birini seçme fonksiyonu*/
         private Guna2CustomCheckBox selectRandomCheckbox()
         {
             if (pnlCheckBoxes.Controls.Count > 0)
             {
                 Guna2CustomCheckBox cb = (Guna2CustomCheckBox)pnlCheckBoxes.Controls[Random(0, pnlCheckBoxes.Controls.Count)];
 
-                while (SelectedCheckboxes.Contains(cb))
+                while (gameInfo.SelectedCheckboxes.Contains(cb))
                 {
 
                     cb = (Guna2CustomCheckBox)pnlCheckBoxes.Controls[Random(0, pnlCheckBoxes.Controls.Count)];
                 }
                 cb.Checked = true;
-                SelectedCheckboxes.Add(cb);
+                gameInfo.SelectedCheckboxes.Add(cb);
                 return cb;
             }
             return null;
@@ -160,6 +171,8 @@ namespace P___G_Grid_Game
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            gameInfo.SelectedCheckboxes = new List<Guna2CustomCheckBox>();
+            gameInfo.counter = 0;
             pnlCheckBoxes.Enabled = false;
             placeCreatedCheckbox();
             timer1.Start();
@@ -176,7 +189,7 @@ namespace P___G_Grid_Game
         //Bir box seçildi. Daha sonra bir sonraki seçilmeden önceki unselect yapılmalı. Bu fonksiyon o işlevi görür.
         void unselectBoxes()
         {
-            foreach (Guna2CustomCheckBox item in SelectedCheckboxes)
+            foreach (Guna2CustomCheckBox item in gameInfo.SelectedCheckboxes)
             {
                 item.Checked = false;
             }
@@ -203,7 +216,7 @@ namespace P___G_Grid_Game
             //[TR]
             //Eğer 3 buton seçilmişse seçme işlemini durdur*/
           
-            if (SelectedCheckboxes.Count == 3)
+            if (gameInfo.SelectedCheckboxes.Count == 3)
             {
                 timer2.Stop();
                 guna2ProgressBar1.Value = 0;
@@ -241,16 +254,15 @@ namespace P___G_Grid_Game
 
     
 
-        byte counter = 0;
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            counter++;
-            guna2ProgressBar1.Value = counter;
+            gameInfo.counter++;
+            guna2ProgressBar1.Value = gameInfo.counter;
 
-            if (counter==guna2ProgressBar1.Maximum)
+            if (gameInfo.counter == guna2ProgressBar1.Maximum)
             {
-                counter = 0;
+                gameInfo.counter = 0;
                 guna2ProgressBar1.Value = 0;
                 pnlImages.Visible = true;
                 selectRandomImage();
@@ -263,6 +275,7 @@ namespace P___G_Grid_Game
         private void btnYes_Click(object sender, EventArgs e)
         {
             pnlImages.Visible = false;
+         
             //[TR]
             //Timer1 durduğu için image unselect erken duruyor. Bu yüzden burada bu fonksyion çağırdık. Bu fonksiyonu commant out yapınca istediğimi anlarsın.
             unselectBoxes();
