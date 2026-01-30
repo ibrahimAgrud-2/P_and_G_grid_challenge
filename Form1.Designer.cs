@@ -39,10 +39,10 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.guna2ProgressBar1 = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.btnImage = new System.Windows.Forms.Button();
-            this.pnlImages = new System.Windows.Forms.Panel();
-            this.btnYes = new Guna.UI2.WinForms.Guna2Button();
-            this.BtnNo = new Guna.UI2.WinForms.Guna2Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.pnlImages = new System.Windows.Forms.Panel();
+            this.BtnNo = new Guna.UI2.WinForms.Guna2Button();
+            this.btnYes = new Guna.UI2.WinForms.Guna2Button();
             this.panel2.SuspendLayout();
             this.pnlImages.SuspendLayout();
             this.SuspendLayout();
@@ -142,6 +142,21 @@
             this.btnImage.TabIndex = 2;
             this.btnImage.UseVisualStyleBackColor = true;
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "0");
+            this.imageList1.Images.SetKeyName(1, "0");
+            this.imageList1.Images.SetKeyName(2, "0");
+            this.imageList1.Images.SetKeyName(3, "0");
+            this.imageList1.Images.SetKeyName(4, "0");
+            this.imageList1.Images.SetKeyName(5, "0");
+            this.imageList1.Images.SetKeyName(6, "0");
+            this.imageList1.Images.SetKeyName(7, "1");
+            this.imageList1.Images.SetKeyName(8, "1");
+            this.imageList1.Images.SetKeyName(9, "1");
+            // 
             // pnlImages
             // 
             this.pnlImages.BackColor = System.Drawing.Color.DeepSkyBlue;
@@ -153,22 +168,6 @@
             this.pnlImages.Size = new System.Drawing.Size(1162, 443);
             this.pnlImages.TabIndex = 4;
             this.pnlImages.Visible = false;
-            // 
-            // btnYes
-            // 
-            this.btnYes.BackColor = System.Drawing.Color.MediumVioletRed;
-            this.btnYes.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnYes.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnYes.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnYes.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnYes.FillColor = System.Drawing.Color.MediumVioletRed;
-            this.btnYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.btnYes.ForeColor = System.Drawing.Color.White;
-            this.btnYes.Location = new System.Drawing.Point(341, 346);
-            this.btnYes.Name = "btnYes";
-            this.btnYes.Size = new System.Drawing.Size(170, 54);
-            this.btnYes.TabIndex = 0;
-            this.btnYes.Text = "Yes";
             // 
             // BtnNo
             // 
@@ -185,15 +184,24 @@
             this.BtnNo.Size = new System.Drawing.Size(170, 54);
             this.BtnNo.TabIndex = 1;
             this.BtnNo.Text = "No";
+            this.BtnNo.Click += new System.EventHandler(this.btnYes_Click);
             // 
-            // imageList1
+            // btnYes
             // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "Gemini_Generated_Image_hlf3e2hlf3e2hlf3.png");
-            this.imageList1.Images.SetKeyName(1, "3.png");
-            this.imageList1.Images.SetKeyName(2, "2ظحىل.png");
-            this.imageList1.Images.SetKeyName(3, "Gemini_Generated_Image_yew5oryew5oryew5(1).png");
+            this.btnYes.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.btnYes.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnYes.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnYes.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnYes.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnYes.FillColor = System.Drawing.Color.MediumVioletRed;
+            this.btnYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.btnYes.ForeColor = System.Drawing.Color.White;
+            this.btnYes.Location = new System.Drawing.Point(332, 346);
+            this.btnYes.Name = "btnYes";
+            this.btnYes.Size = new System.Drawing.Size(170, 54);
+            this.btnYes.TabIndex = 0;
+            this.btnYes.Text = "Yes";
+            this.btnYes.Click += new System.EventHandler(this.btnYes_Click);
             // 
             // Form1
             // 

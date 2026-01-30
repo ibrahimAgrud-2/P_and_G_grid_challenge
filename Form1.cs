@@ -211,12 +211,35 @@ namespace P___G_Grid_Game
                 return;
             }
             selectRandomCheckbox();
+
+            //[TR]
+            //Timer2 daha hızlı olduğu için timer1 daha önce durması lazım. Yani timer1 box seçildikten hemen sonra duruyor. Timer2 ise progress bar durduktan sonra duruyor. Bu ayarlamalar denenerek en iyi hali bulundu. Bunda önce fazlaca farklı seneryo denedim en kesin çalışan bu.
+            timer1.Stop();
             timer2.Start();
+          
+
+
+        }
+        void selectRandomImage()
+        {
+
+            if (imageList1.Images.Count != 0)
+            {
+                byte imageIndex = (byte)Random(0, imageList1.Images.Count);
+                btnImage.BackgroundImage = imageList1.Images[imageIndex];
+                imageList1.Images.RemoveAt(imageIndex);
+            }
+            else
+            {
+                MessageBox.Show("No image left");
+                this.Close();
+            }
 
 
         }
 
 
+    
 
         byte counter = 0;
 
@@ -229,9 +252,22 @@ namespace P___G_Grid_Game
             {
                 counter = 0;
                 guna2ProgressBar1.Value = 0;
+                pnlImages.Visible = true;
+                selectRandomImage();
+                timer2.Stop();
+           
             }
         }
 
-   
+
+        private void btnYes_Click(object sender, EventArgs e)
+        {
+            pnlImages.Visible = false;
+            //[TR]
+            //Timer1 durduğu için image unselect erken duruyor. Bu yüzden burada bu fonksyion çağırdık. Bu fonksiyonu commant out yapınca istediğimi anlarsın.
+            unselectBoxes();
+            timer1.Start();
+
+        }
     }
 }
