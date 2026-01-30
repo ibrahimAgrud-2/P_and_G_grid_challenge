@@ -143,15 +143,23 @@ namespace P___G_Grid_Game
         {
             if (panel1.Controls.Count > 0)
             {
-                Guna2CustomCheckBox cb = (Guna2CustomCheckBox)panel1.Controls[Random(0, panel1.Controls.Count)];
+                Guna2CustomCheckBox cb=new Guna2CustomCheckBox();
 
-                if (!SelectedCheckboxes.Contains(cb))
+
+                /*[EN] 
+                // If we use IF, this function cannot necessarily return a box every time. For example, if it does not enter if, that is, if the box is in the list, it returns null. This may be a problem in setting the timer time.*[TR] 
+                // If we use IF, this function cannot necessarily return a box every time. For example, if it does not enter if, that is, if the box is in the list/
+                /*[TR] 
+                //Eğer IF kullanırsak bu fonksyion her dumda bir mutlaka bir box dönderemez. Örneğin, if'e girmezse yani box listede varsa null döner. Bu durum timer süre ayarlamasında sorun olabilir. Bu yüzden her durumda bu fonsiyonun mutlaka bir box döndermesi lazım. Eğer Box zaten seçili ise o zaman başa biri box seçsin. Bunuda while ile yaparız.*/
+
+                while (SelectedCheckboxes.Contains(cb))
                 {
 
-                    cb.Checked = true;
-                    SelectedCheckboxes.Add(cb);
-                    return cb;
+                    cb = (Guna2CustomCheckBox)panel1.Controls[Random(0, panel1.Controls.Count)];
                 }
+                cb.Checked = true;
+                SelectedCheckboxes.Add(cb);
+                return cb;
             }
             return null;
 
