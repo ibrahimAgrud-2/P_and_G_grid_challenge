@@ -118,7 +118,7 @@ namespace P___G_Grid_Game
         {
             for (int i = 0; i < 30; i++)
             {
-                panel1.Controls.Add(createCheckbox());
+                pnlCheckBoxes.Controls.Add(createCheckbox());
 
             }
 
@@ -141,9 +141,9 @@ namespace P___G_Grid_Game
         //placeCreatedCheckbox fonksiyonu ile yerleştirilen box'lardan rastgele birini seçme fonksiyonu
         private Guna2CustomCheckBox selectRandomCheckbox()
         {
-            if (panel1.Controls.Count > 0)
+            if (pnlCheckBoxes.Controls.Count > 0)
             {
-                Guna2CustomCheckBox cb = (Guna2CustomCheckBox)panel1.Controls[Random(0, panel1.Controls.Count)];
+                Guna2CustomCheckBox cb = (Guna2CustomCheckBox)pnlCheckBoxes.Controls[Random(0, pnlCheckBoxes.Controls.Count)];
 
                 if (!SelectedCheckboxes.Contains(cb))
                 {
@@ -159,7 +159,7 @@ namespace P___G_Grid_Game
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            panel1.Enabled = false;
+            pnlCheckBoxes.Enabled = false;
             placeCreatedCheckbox();
             timer1.Start();
 
@@ -230,5 +230,7 @@ namespace P___G_Grid_Game
                 guna2ProgressBar1.Value = 0;
             }
         }
+
+   
     }
 }

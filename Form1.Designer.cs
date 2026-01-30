@@ -29,15 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnHelp = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnClose = new Guna.UI2.WinForms.Guna2CircleButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlCheckBoxes = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.guna2ProgressBar1 = new Guna.UI2.WinForms.Guna2ProgressBar();
+            this.btnImage = new System.Windows.Forms.Button();
+            this.pnlImages = new System.Windows.Forms.Panel();
+            this.btnYes = new Guna.UI2.WinForms.Guna2Button();
+            this.BtnNo = new Guna.UI2.WinForms.Guna2Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel2.SuspendLayout();
+            this.pnlImages.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -95,13 +102,13 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Grid Challenge";
             // 
-            // panel1
+            // pnlCheckBoxes
             // 
-            this.panel1.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.panel1.Location = new System.Drawing.Point(-1, 120);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1162, 446);
-            this.panel1.TabIndex = 3;
+            this.pnlCheckBoxes.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.pnlCheckBoxes.Location = new System.Drawing.Point(-1, 120);
+            this.pnlCheckBoxes.Name = "pnlCheckBoxes";
+            this.pnlCheckBoxes.Size = new System.Drawing.Size(1162, 446);
+            this.pnlCheckBoxes.TabIndex = 3;
             // 
             // timer1
             // 
@@ -115,7 +122,7 @@
             // 
             // guna2ProgressBar1
             // 
-            this.guna2ProgressBar1.Location = new System.Drawing.Point(12, 81);
+            this.guna2ProgressBar1.Location = new System.Drawing.Point(12, 77);
             this.guna2ProgressBar1.Maximum = 50;
             this.guna2ProgressBar1.Name = "guna2ProgressBar1";
             this.guna2ProgressBar1.ProgressColor = System.Drawing.Color.DeepSkyBlue;
@@ -125,13 +132,77 @@
             this.guna2ProgressBar1.Text = "guna2ProgressBar1";
             this.guna2ProgressBar1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
+            // btnImage
+            // 
+            this.btnImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnImage.ImageList = this.imageList1;
+            this.btnImage.Location = new System.Drawing.Point(246, 21);
+            this.btnImage.Name = "btnImage";
+            this.btnImage.Size = new System.Drawing.Size(635, 302);
+            this.btnImage.TabIndex = 2;
+            this.btnImage.UseVisualStyleBackColor = true;
+            // 
+            // pnlImages
+            // 
+            this.pnlImages.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.pnlImages.Controls.Add(this.btnImage);
+            this.pnlImages.Controls.Add(this.BtnNo);
+            this.pnlImages.Controls.Add(this.btnYes);
+            this.pnlImages.Location = new System.Drawing.Point(-1, 123);
+            this.pnlImages.Name = "pnlImages";
+            this.pnlImages.Size = new System.Drawing.Size(1162, 443);
+            this.pnlImages.TabIndex = 4;
+            this.pnlImages.Visible = false;
+            // 
+            // btnYes
+            // 
+            this.btnYes.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.btnYes.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnYes.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnYes.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnYes.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnYes.FillColor = System.Drawing.Color.MediumVioletRed;
+            this.btnYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.btnYes.ForeColor = System.Drawing.Color.White;
+            this.btnYes.Location = new System.Drawing.Point(341, 346);
+            this.btnYes.Name = "btnYes";
+            this.btnYes.Size = new System.Drawing.Size(170, 54);
+            this.btnYes.TabIndex = 0;
+            this.btnYes.Text = "Yes";
+            // 
+            // BtnNo
+            // 
+            this.BtnNo.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.BtnNo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BtnNo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BtnNo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BtnNo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BtnNo.FillColor = System.Drawing.Color.MediumVioletRed;
+            this.BtnNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.BtnNo.ForeColor = System.Drawing.Color.White;
+            this.BtnNo.Location = new System.Drawing.Point(572, 346);
+            this.BtnNo.Name = "BtnNo";
+            this.BtnNo.Size = new System.Drawing.Size(170, 54);
+            this.BtnNo.TabIndex = 1;
+            this.BtnNo.Text = "No";
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "Gemini_Generated_Image_hlf3e2hlf3e2hlf3.png");
+            this.imageList1.Images.SetKeyName(1, "3.png");
+            this.imageList1.Images.SetKeyName(2, "2ظحىل.png");
+            this.imageList1.Images.SetKeyName(3, "Gemini_Generated_Image_yew5oryew5oryew5(1).png");
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1162, 721);
+            this.Controls.Add(this.pnlImages);
             this.Controls.Add(this.guna2ProgressBar1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlCheckBoxes);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(5);
@@ -140,6 +211,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.pnlImages.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -149,10 +221,15 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2CircleButton btnHelp;
         private Guna.UI2.WinForms.Guna2CircleButton btnClose;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlCheckBoxes;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
         private Guna.UI2.WinForms.Guna2ProgressBar guna2ProgressBar1;
+        private System.Windows.Forms.Button btnImage;
+        private System.Windows.Forms.Panel pnlImages;
+        private Guna.UI2.WinForms.Guna2Button BtnNo;
+        private Guna.UI2.WinForms.Guna2Button btnYes;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
 
