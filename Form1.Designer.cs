@@ -43,6 +43,7 @@
             this.pnlImages = new System.Windows.Forms.Panel();
             this.BtnNo = new Guna.UI2.WinForms.Guna2Button();
             this.btnYes = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.panel2.SuspendLayout();
             this.pnlImages.SuspendLayout();
             this.SuspendLayout();
@@ -171,7 +172,8 @@
             // 
             // BtnNo
             // 
-            this.BtnNo.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.BtnNo.BackColor = System.Drawing.Color.Transparent;
+            this.BtnNo.BorderRadius = 10;
             this.BtnNo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.BtnNo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.BtnNo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -188,7 +190,8 @@
             // 
             // btnYes
             // 
-            this.btnYes.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.btnYes.BackColor = System.Drawing.Color.Transparent;
+            this.btnYes.BorderRadius = 10;
             this.btnYes.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnYes.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnYes.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -203,11 +206,29 @@
             this.btnYes.Text = "Yes";
             this.btnYes.Click += new System.EventHandler(this.btnYes_Click);
             // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.BorderRadius = 10;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.MediumVioletRed;
+            this.guna2Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(446, 595);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(170, 54);
+            this.guna2Button1.TabIndex = 3;
+            this.guna2Button1.Text = "Send";
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1162, 721);
+            this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.pnlImages);
             this.Controls.Add(this.guna2ProgressBar1);
             this.Controls.Add(this.pnlCheckBoxes);
@@ -238,6 +259,7 @@
         private Guna.UI2.WinForms.Guna2Button BtnNo;
         private Guna.UI2.WinForms.Guna2Button btnYes;
         private System.Windows.Forms.ImageList imageList1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }
 
